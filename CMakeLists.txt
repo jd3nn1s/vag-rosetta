@@ -5,3 +5,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 set(SOURCES vag-rosetta.h vag-rosetta.c)
 
 add_library(vag-rosetta ${SOURCES})
+
+add_executable(test test.c)
+target_link_libraries(test vag-rosetta)

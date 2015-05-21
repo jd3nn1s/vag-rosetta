@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "vag-rosetta.h"
 
 // translation function prototype
@@ -117,4 +118,18 @@ bool decode_value(uint8_t* bytes, vag_value* value) {
         return false;
     translations[bytes[0]](bytes[1], bytes[2], value);
     return true;
+}
+
+void print_value(vag_value* value) {
+    switch(value->type) {
+    case TYPE_INT:
+        printf("%d %s\n", value->i, value->units);
+        break;
+    case TYPE_FLOAT:
+        printf("%f %s\n", value->f, value->units);
+        break;
+    default:
+        printf("unsupported type\n");
+        break;
+    }
 }
