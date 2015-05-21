@@ -13,8 +13,8 @@ struct vag_value {
 
 #define TYPE_INT 1
 #define TYPE_FLOAT 2
-#define TYPE_STRING 4
-#define TYPE_BITMASK 8
+#define TYPE_STRING 3
+#define TYPE_BITMASK 4
 
 bool decode_value(uint8_t*, vag_value*);
 void print_value(vag_value*);

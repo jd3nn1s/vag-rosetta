@@ -126,7 +126,7 @@ void print_value(vag_value* value) {
         printf("%d %s\n", value->i, value->units);
         break;
     case TYPE_FLOAT:
-        printf("%f %s\n", value->f, value->units);
+        printf("%.1f %s\n", value->f, value->units);
         break;
     default:
         printf("unsupported type\n");
